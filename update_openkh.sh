@@ -2,7 +2,7 @@
 
 # Variables
 GAMES_DIR="${HOME}/Games"
-MODS_DIR="${GAMES_DIR}/mods"
+MODS_DIR="${GAMES_DIR}/mods/kingdom-hearts"
 OPENKH_DIR="${MODS_DIR}/OpenKH"
 TEMP_DIR=/tmp/OpenKHTemp
 

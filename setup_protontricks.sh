@@ -2,7 +2,7 @@
 
 # Variables
 GAMES_DIR="${HOME}/Games"
-MODS_DIR="${GAMES_DIR}/mods"
+MODS_DIR="${GAMES_DIR}/mods/kingdom-hearts"
 OPENKH_DIR="${MODS_DIR}/OpenKH"
 
 BATCH_SCRIPT_SRC="https://codeberg.org/KHOmega/KH-Mods-Setup/raw/branch/main/refined_specific/add_registry.bat"
