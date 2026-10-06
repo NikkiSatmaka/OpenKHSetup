@@ -1,0 +1,14 @@
+[env]
+_.file = ".env"
+
+[tasks.setup-openkh]
+description = "Download and extract the latest OpenKH"
+run = "bash setup_openkh.sh"
+
+[tasks.setup-protontricks]
+description = "Setup protontricks for KH and OpenKH prefixes"
+run = "bash setup_protontricks.sh"
+
+[tasks.update-openkh]
+description = "Update and extract the latest OpenKH"
+run = "bash update_openkh.sh"
