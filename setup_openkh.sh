@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # Variables
 GAMES_DIR="${HOME}/Games"
 MODS_DIR="${GAMES_DIR}/mods/kingdom-hearts"
