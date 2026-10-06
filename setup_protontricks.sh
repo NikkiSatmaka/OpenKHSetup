@@ -5,12 +5,18 @@ set -euo pipefail
 # Variables
 GAMES_DIR="${HOME}/Games"
 MODS_DIR="${GAMES_DIR}/mods/kingdom-hearts"
-OPENKH_DIR="${MODS_DIR}/OpenKH"
+OPENKH_DIR="${MODS_DIR}/openkh"
 
 BATCH_SCRIPT_SRC="https://codeberg.org/KHOmega/KH-Mods-Setup/raw/branch/main/refined_specific/add_registry.bat"
 BATCH_SCRIPT_LOC="${OPENKH_DIR}/add_registry.bat"
 
 GAME_APP_ID=2552430
+
+if [[ -z "${OPENKH_APP_ID}" ]]; then
+    echo "Error: OPENKH_APP_ID is not set." >&2
+    exit 1
+fi
+
 
 # Make a dedicated OpenKH directory
 mkdir -p "$OPENKH_DIR" || exit
