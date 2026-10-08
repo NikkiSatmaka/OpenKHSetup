@@ -2,14 +2,13 @@
 
 set -euo pipefail
 
-SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 GAMES_DIR="${HOME}/Games"
 MODS_DIR="${GAMES_DIR}/mods/kingdom-hearts"
 OPENKH_DIR="${MODS_DIR}/openkh"
-ASSETS_DIR="${SCRIPT_DIR}/assets"
+
 OPENKH_RELEASE="https://github.com/OpenKH/OpenKh/releases/download/latest/openkh.zip"
 
-for command in wget unzip rsync mktemp cp; do
+for command in wget unzip rsync mktemp; do
     if ! command -v "$command" >/dev/null 2>&1; then
         printf 'Error: required command not found: %s\n' "$command" >&2
         exit 1
@@ -30,11 +29,4 @@ if [[ ! -d "${TEMP_DIR}/openkh" ]]; then
 fi
 
 rsync -avh --progress --checksum "${TEMP_DIR}/openkh/" "${OPENKH_DIR}/"
-if [[ ! -d "$ASSETS_DIR" ]]; then
-    printf 'Error: assets directory not found: %s\n' "$ASSETS_DIR" >&2
-    exit 1
-fi
-
-cp -a -- "$ASSETS_DIR" "$OPENKH_DIR/"
-
 printf 'OpenKH setup complete.\n'
